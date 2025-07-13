@@ -1,0 +1,10 @@
+var,label
+pos,Position
+sig,Significant
+depth,Count
+per_total,Proportion
+pois_pvalue,pois_pvalue
+exp_pvalue,Pvalue
+medians,Medians
+zscore,Zscore
+percentile,Percentile

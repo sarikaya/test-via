@@ -1,0 +1,35 @@
+---
+title: "`r report_title`"
+output: 
+  html_document:
+    theme: readable
+    toc: TRUE
+    toc_depth: 3
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+    number_sections: FALSE
+date: "`r Sys.Date()`<br/><br/>"
+---
+<font size="4">`r tagList(dn_tag_list)`<br/>
+<font size="4"><br>`r report_description`<br/>
+
+## Parameters
+<font size="4">Significance thresholds:<br/>
+```{r echo=FALSE, warning = FALSE}
+sig_param_rep %>% 
+    kable(format = 'html') %>% 
+    kable_styling(bootstrap_options = "striped", full_width = FALSE, position = "left", font_size = 12, html_font = "Helvetica")
+if (false_discovery_method == FALSE){
+  false_discovery_method = 'none'
+}
+```
+<font size="4">False-discovery correction = `r false_discovery_method`<br/>
+<font size="4">Trimmed from left = `r trim_left`<br/>
+<font size="4">Trimmed from right = `r trim_right`<br/>
+<font size="4">Positions with count <= `r depth_min_rm` are not plotted<br/>
+
+## Results
+```{r echo=FALSE, warning = FALSE}
+tagList(tag_list)
+```

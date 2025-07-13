@@ -1,0 +1,17 @@
+---
+title: "`r report_title`"
+output: 
+  html_document:
+    theme: readable
+    toc: TRUE
+    toc_depth: 3
+    toc_float:
+      collapsed: TRUE
+      smooth_scroll: TRUE
+    number_sections: FALSE
+date: "`r Sys.Date()`<br/><br/>"
+---
+
+```{r echo=FALSE, warning = FALSE}
+tagList(tag_list)
+```
